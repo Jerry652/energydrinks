@@ -1,0 +1,61 @@
+<!--ul>
+	{% for drink in all_drinks %}
+	<table>
+		<tr>
+			<th>
+				<a href="/energy/{{ drink.id }}">{{ drink.name }}</a>
+			</th>
+			<th>
+				<a href="/energy/{{ drink.id }}">{{ drink.brand }}</a>
+			</th>
+		</tr>
+	</table>
+	{% endfor %}
+
+</ul-->
+
+<style>
+table {
+    border-collapse: collapse;
+
+    height: 15%;
+    margin: auto;
+    float: left;
+
+
+}
+
+th, td {
+    padding: 8px;
+    float: left;
+    vertical-align: text-top; 
+}
+
+img {
+ 	width: 50px;
+
+}
+body{
+	background: #f8f8f8;
+
+}
+
+a{
+	color: black;
+	text-decoration: none;
+
+}
+</style>
+<center><h1>Database of energy drinks</h1></center>
+<center><button type="button"><a href="/admin/energy/drink/", target="_blank"> Add new drink to database</a></button> <p style="margin: auto">user: admin</p><p style="margin: auto">password: heslo123</p></center>
+{% for drink in all_drinks %}
+	<table style="margin-top: 5%">
+		<tr>
+			<th>
+				<a href="/energy/{{ drink.id }}" style="vertical-align: center;"><img src="{{ drink.brand_photo }}" style="width: 150px"><h2> {{drink.name}}</h2></a>
+			</th>
+		</tr>
+		
+	
+	</table>
+{% endfor %}
